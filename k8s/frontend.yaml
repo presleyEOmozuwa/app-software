@@ -20,17 +20,16 @@ spec:
             - containerPort: 5173
           env:
             - name: CHOKIDAR_USEPOLLING
-              value: "true"
+              value: "true"  
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: react-frontend
+  name: frontend-service
 spec:
   selector:
     app: react-frontend
   ports:
-    - port: 5173
+    - port: 80
       targetPort: 5173
-  type: ClusterIP
-
+  type: ClusterIP     
